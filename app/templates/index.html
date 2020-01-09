@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class='container'>
+        <div class='container__title'>Опрос</div>
+        {% if username != None %}
+            <div class='container__subtitle'>
+                Привет, {{username}}
+            </div>
+            {% if next != 0 %}
+                <div class='button'>
+                    <a href='/question/{{next}}'>Продолжить</a>
+                </div>
+            {% endif %}
+            <div class='button'>
+                    <a href='/question/1'>Начать</a>
+                </div>
+            {% if last != 0 %}
+                <div class='button'>
+                    <a href='/result'>Результаты</a>
+                </div>
+            {% endif %}
+            <div class='button'>
+                <a href='/logout'>Выйти</a>
+            </div>
+        {% else %}
+            <form action="" method="post">
+                {% if error != None %}
+                    <div>{{error}}</div>
+                {% endif %}
+                <div class='form__element'>
+                    <label for='username'>Имя пользователя</label>
+                    <input name='username' />
+                </div>
+                <div class='form__element'>
+                    <label for='username'>Пароль</label>
+                    <input name='password' />
+                </div>
+                <div class='form__element_submit'>
+                    <input type='submit' value='Войти'/>
+                </div>
+            </form>
+        {% endif %}
+    </div>
+{% endblock %}

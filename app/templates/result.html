@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<div class='container'>
+    <div class='container__title'>Результаты</div>
+    <div class='result'>
+        {% for ans_block in result %}
+            <div class='result__block'>
+            {% for ans in ans_block %}
+                <div class='result__item'>
+                    <span>{{ans.question}}: </span>
+                    <span>{{ans.answer}}</span>
+                </div>
+            {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+    <div class='button'>
+        <a href='/'>На главную</a>
+    </div>
+</div>
+{% endblock %}
