@@ -28,12 +28,16 @@
                     <div>{{error}}</div>
                 {% endif %}
                 <div class='form__element'>
-                    <label for='username'>Имя пользователя</label>
-                    <input name='username' />
+                    <div>
+                        <label for='username'>Имя пользователя</label>
+                        <input name='username' required />
+                    </div>                    
                 </div>
                 <div class='form__element'>
-                    <label for='username'>Пароль</label>
-                    <input name='password' />
+                    <div>
+                        <label for='username'>Пароль</label>
+                        <input name='password' required type='password' />
+                    </div>                    
                 </div>
                 <div class='form__element_submit'>
                     <input type='submit' value='Войти'/>
